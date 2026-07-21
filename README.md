@@ -19,13 +19,13 @@ Build the Docker image:
 
 ```bash
 git clone <repo-url>
-cd AMGBase
+cd DMSLProjectRepository
 docker compose up --build
 ```
 
 The first run takes quite some time. Docker first has to build the image.  The sentence-transformers package uses large models to construct semantic embeddings, and thus causes the image to likewise be quite large.
 
-Fully fetching and processing the data is sinificantly time consuming. As such, the data folder has already been pre-populated with content-based, collaborative, and hybrid graph data.
+Fully fetching and processing the data is significantly time consuming. As such, the data folder has already been pre-populated with content-based, collaborative, and hybrid graph data.
 
 Running example recomennations run through the recommender folder:
 
