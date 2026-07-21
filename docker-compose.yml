@@ -1,0 +1,59 @@
+services:
+
+  postgres:
+
+    image: postgres:17
+
+    container_name: amg_postgres
+
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: manga_db
+      POSTGRES_USER: manga_user
+      POSTGRES_PASSWORD: password
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U manga_user -d manga_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+
+
+  backend:
+
+    build:
+      context: ./backend
+
+    container_name: amg_backend
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+    working_dir: /backend
+
+    volumes:
+      - ./backend:/backend
+
+    ports:
+      - "8000:8000"
+
+    environment:
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_NAME: manga_db
+      DATABASE_USER: manga_user
+      DATABASE_PASSWORD: password
+      PYTHONPATH: /backend
+
+volumes:
+
+  postgres_data:
