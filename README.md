@@ -1,9 +1,8 @@
-# AMGBase
+# DMSL Hybrid Manga Recommendation Framework
 
 Manga are comic books and graphic novels originating from Japan, known for their distinctive art style, expressive characters, and wide variety of genres. 
 
 This project develops and evaluates a hybrid manga recommendation framework that combines content-based and collaborative filtering techniques to recommend similar manga.
-
 
 
 # Author
