@@ -1,4 +1,4 @@
-# DMSL Hybrid Manga Recommendation Framework
+# Hybrid Manga Recommendation Framework
 
 Manga are comic books and graphic novels originating from Japan, known for their distinctive art style, expressive characters, and wide variety of genres. 
 
@@ -6,8 +6,7 @@ This project develops and evaluates a hybrid manga recommendation framework that
 
 
 # Author
-**Marco Sousa**
-**ISYE 7406 (DMSL): Team 067**
+**Marco Sousa (2026)**
 
 # Running the application
 
